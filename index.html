@@ -102,8 +102,12 @@ h3{font-family:var(--display);font-weight:700;color:var(--ink);margin:0}
 .facts li{display:grid;grid-template-columns:140px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--hair);font-size:15.5px}
 .facts li span:first-child{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);padding-top:4px}
 @media(max-width:480px){.facts li{grid-template-columns:1fr;gap:2px}}
-/* photo slot (until real photos are supplied) */
-.photo{margin:44px 0 0;border:1px solid var(--hair);border-radius:10px;background:var(--ink-soft);aspect-ratio:16/7;display:flex;align-items:flex-end;padding:18px 22px;color:#98a0a9;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;font-family:var(--display);font-weight:700}
+/* photos */
+.photorow{display:grid;grid-template-columns:1.4fr 1fr;gap:14px;margin-top:44px}
+.photorow figure{margin:0}
+.photorow img{width:100%;height:100%;min-height:260px;object-fit:cover;border-radius:10px;border:1px solid var(--hair)}
+.photorow figcaption{font-size:13.5px;color:var(--muted);margin-top:8px}
+@media(max-width:700px){.photorow{grid-template-columns:1fr}.photorow img{min-height:200px}}
 /* contact */
 .contact{background:var(--ink);color:#cfd4da}
 .contact h2{color:#fff}
@@ -131,8 +135,7 @@ footer .legal{max-width:80ch;border-top:1px solid rgba(255,255,255,.1);padding-t
 </header>
 
 <section class="hero" id="top">
-  <!-- Real photo only. Drop one of George's own shots at images/hero.jpg and uncomment:
-  <img class="hero-photo" src="images/hero.jpg" alt=""> -->
+  <img class="hero-photo" src="images/hero.jpg" alt="">
   <svg class="swath" viewBox="0 0 620 210" aria-hidden="true">
     <path class="run"  d="M8 168 H432"/>
     <path class="turn" d="M432 168 C560 168 560 104 432 104"/>
@@ -232,7 +235,10 @@ footer .legal{max-width:80ch;border-top:1px solid rgba(255,255,255,.1);padding-t
       <article class="card"><p class="n">1.5 hr</p><h3>Group debrief</h3><p>What each pilot saw, where the decision was late, what changes tomorrow morning. This is where the learning sticks.</p></article>
     </div>
     <p class="pull">“Complacency kills. Regular refreshers keep reflexes sharp and procedures current.”<small>Gibson Oster, Lakeland Dusters, after attending — AgAir Update, June 2026</small></p>
-    <div class="photo" aria-hidden="true">Photo slot — real aircraft, water load, on the strip</div>
+    <div class="photorow">
+      <figure><img src="images/airtractor.jpg" alt="Air Tractor working low over row crops"><figcaption>Real airplanes, real fields — the training flies the way the work flies.</figcaption></figure>
+      <figure><img src="images/cockpit.jpg" alt="Cockpit view on a spray pass down a green field"><figcaption>The view from the seat on a pass.</figcaption></figure>
+    </div>
   </div>
 </section>
 
