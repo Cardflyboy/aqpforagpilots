@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AQP for Ag Pilots</title>
+<meta name="description" content="Crop Jet Ag Pilot AQP — a proficiency-based training and evaluation program for Part 137 agricultural pilots, developed by George Parker III of Crop Jet Aviation, Gooding, Idaho.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#12161c; --ink-soft:#1c222b; --gold:#dfb547; --gold-deep:#b8912c;
+  --cream:#f7f5f0; --rust:#b4531f; --body:#454c55; --muted:#7b838c; --hair:#dcd7cc;
+  --display:'Archivo',system-ui,sans-serif; --text:'Inter',system-ui,sans-serif;
+  --gut:clamp(20px,5vw,64px); --maxw:1240px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--body);font-family:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gut)}
+/* masthead */
+.masthead{background:var(--ink);position:sticky;top:0;z-index:20}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px}
+.mark{font-family:var(--display);font-weight:800;font-size:clamp(15px,2.4vw,19px);letter-spacing:.13em;text-transform:uppercase;color:#fff;text-decoration:none}
+.mark span{color:var(--gold)}
+.btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:15px 26px;border-radius:7px;text-decoration:none;border:2px solid transparent;transition:background .18s ease,color .18s ease,border-color .18s ease}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{background:#ecc55c}
+.btn-ghost{background:rgba(255,255,255,.94);color:var(--ink)}
+.btn-ghost:hover{background:#fff}
+/* hero */
+.hero{position:relative;background:var(--ink);overflow:hidden;isolation:isolate}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(104deg,rgba(18,22,28,.96) 0%,rgba(18,22,28,.82) 46%,rgba(18,22,28,.34) 100%)}
+.hero .wrap{padding-block:clamp(72px,13vw,150px)}
+.hero-copy{max-width:44rem}
+.eyebrow{display:flex;align-items:center;gap:16px;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 26px}
+.eyebrow::before{content:"";width:52px;height:3px;background:var(--gold);flex:none}
+.eyebrow.on-light{color:var(--rust)}
+.eyebrow.on-light::before{background:var(--rust)}
+h1{font-family:var(--display);font-weight:800;color:#fff;font-size:clamp(44px,8.4vw,92px);line-height:.94;letter-spacing:-.022em;text-transform:uppercase;margin:0 0 28px}
+h1 .accent{color:var(--gold);display:block}
+.deck{font-size:clamp(17px,2.1vw,21px);line-height:1.55;color:#cfd4da;margin:0 0 38px;max-width:36rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.swath{position:absolute;right:-40px;bottom:8%;width:min(52%,620px);height:auto;z-index:0;pointer-events:none;opacity:.85}
+.swath path{fill:none;stroke:var(--gold);stroke-width:3.5;stroke-linecap:round}
+.swath .run{stroke-dasharray:15 13}
+.swath .turn{stroke-dasharray:6 11;opacity:.62}
+@media(max-width:860px){.swath{display:none}}
+/* band */
+.band{background:var(--gold);color:var(--ink)}
+.band .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px 40px;padding-block:24px}
+.band p{margin:0;font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.15em;text-transform:uppercase}
+/* sections */
+.section{padding-block:clamp(64px,10vw,116px)}
+.section + .section{border-top:1px solid var(--hair)}
+h2{font-family:var(--display);font-weight:700;color:var(--ink);font-size:clamp(31px,5.2vw,54px);line-height:1.04;letter-spacing:-.02em;margin:0 0 26px;max-width:22ch}
+h3{font-family:var(--display);font-weight:700;color:var(--ink);margin:0}
+.lede{font-size:clamp(17px,2vw,20px);color:var(--body);max-width:42rem;margin:0 0 18px}
+.sub{color:var(--muted);max-width:42rem;margin:0 0 34px}
+.pull{border-left:5px solid var(--gold);padding:6px 0 6px 26px;margin:40px 0 0;font-family:var(--display);font-weight:700;color:var(--ink);font-size:clamp(19px,2.6vw,27px);line-height:1.28;max-width:34ch}
+.pull small{display:block;font-family:var(--text);font-weight:500;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.plain{background:var(--ink);color:#cfd4da;border-radius:10px;padding:clamp(26px,4vw,44px);margin-top:52px}
+.plain h3{color:#fff;text-transform:uppercase;letter-spacing:.05em;font-size:clamp(18px,2.4vw,23px);margin:0 0 16px}
+.plain p{margin:0 0 14px;max-width:52rem}
+.plain p:last-child{margin-bottom:0}
+.plain strong{color:var(--gold)}
+/* grid cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);margin-top:44px}
+.card{background:var(--cream);padding:28px 26px}
+.card .n{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.18em;color:var(--rust);text-transform:uppercase;margin:0 0 12px}
+.card h3{font-size:19px;line-height:1.22;margin:0 0 10px}
+.card p{margin:0;font-size:15.5px;color:var(--muted)}
+/* stat strip */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);margin-top:44px}
+.stats div{background:var(--cream);padding:26px}
+.stats b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(34px,4.5vw,50px);line-height:1;color:var(--ink);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stats span{display:block;font-size:14.5px;color:var(--muted);margin-top:10px}
+/* runway */
+.runway{margin-top:44px;background:#fff;border:1px solid var(--hair);border-radius:10px;padding:clamp(18px,3vw,32px);overflow-x:auto}
+.runway svg{display:block;width:100%;min-width:720px;height:auto}
+.numbers{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);margin-top:28px}
+.numbers div{background:var(--cream);padding:18px 20px}
+.numbers b{font-family:var(--display);font-weight:700;font-size:22px;color:var(--ink);display:block;font-variant-numeric:tabular-nums}
+.numbers span{font-size:14px;color:var(--muted)}
+.caveat{font-size:14.5px;color:var(--muted);margin:22px 0 0;max-width:60rem}
+/* timeline */
+.tl{list-style:none;margin:44px 0 0;padding:0;border-top:1px solid var(--hair)}
+.tl li{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--hair)}
+.tl b{font-family:var(--display);font-weight:700;color:var(--rust);font-size:15px;letter-spacing:.06em}
+.tl p{margin:0;max-width:52rem}
+@media(max-width:540px){.tl li{grid-template-columns:1fr;gap:4px}}
+/* bio */
+.bio{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);margin-top:10px}
+@media(max-width:900px){.bio{grid-template-columns:1fr}}
+.bio p{max-width:46rem}
+.facts{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.facts li{display:grid;grid-template-columns:140px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--hair);font-size:15.5px}
+.facts li span:first-child{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);padding-top:4px}
+@media(max-width:480px){.facts li{grid-template-columns:1fr;gap:2px}}
+/* photo slot (until real photos are supplied) */
+.photo{margin:44px 0 0;border:1px solid var(--hair);border-radius:10px;background:var(--ink-soft);aspect-ratio:16/7;display:flex;align-items:flex-end;padding:18px 22px;color:#98a0a9;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;font-family:var(--display);font-weight:700}
+/* contact */
+.contact{background:var(--ink);color:#cfd4da}
+.contact h2{color:#fff}
+.contact .lede{color:#cfd4da}
+.contact .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px)}
+@media(max-width:820px){.contact .cols{grid-template-columns:1fr}}
+.contact .box{border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:26px}
+.contact .box h3{color:#fff;font-size:18px;margin:0 0 8px}
+.contact .box p{margin:0 0 12px;font-size:15.5px}
+.contact .box p:last-child{margin:0}
+footer{background:var(--ink);color:#98a0a9;padding-block:44px;font-size:14px;border-top:1px solid rgba(255,255,255,.1)}
+footer h4{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+footer ul{list-style:none;margin:0 0 26px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:8px 32px}
+footer a{color:#cfd4da}
+footer .legal{max-width:80ch;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;margin:0}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <a class="mark" href="#top">Crop Jet <span>Ag Pilot AQP</span></a>
+    <a class="btn btn-gold" href="#contact">Request info</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <!-- Real photo only. Drop one of George's own shots at images/hero.jpg and uncomment:
+  <img class="hero-photo" src="images/hero.jpg" alt=""> -->
+  <svg class="swath" viewBox="0 0 620 210" aria-hidden="true">
+    <path class="run"  d="M8 168 H432"/>
+    <path class="turn" d="M432 168 C560 168 560 104 432 104"/>
+    <path class="run"  d="M432 104 H8"/>
+    <path class="turn" d="M8 104 C-104 104 -104 42 8 42"/>
+    <path class="run"  d="M8 42 H432"/>
+  </svg>
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Agricultural aviation qualification</p>
+      <h1>Learn from others,<span class="accent">don't learn the hard way.</span></h1>
+      <p class="deck">Every scenario in this program starts with a real accident report and the numbers behind it — how fast the airplane was moving, how much runway was left, how many seconds the pilot had. Then you fly it, with a real load, before it happens to you.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="#how">See how it works</a>
+        <a class="btn btn-ghost" href="#george">Meet George Parker</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <p>Gooding, Idaho</p>
+    <p>Real-world agricultural aviation</p>
+    <p>Accident data · Real scenarios · Measured proficiency</p>
+  </div>
+</div>
+
+<section class="section" id="why">
+  <div class="wrap">
+    <p class="eyebrow on-light">The basics</p>
+    <h2>What is AQP?</h2>
+    <p class="lede">AQP stands for Advanced Qualification Program. It's the FAA's way of training pilots against the threats that actually show up in their own operation, instead of running through the same fixed list of maneuvers every year.</p>
+    <p class="sub">It works like this: look at your own accident and incident data, pick the threats that matter most, write training scenarios around them, fly them, and measure whether pilots can handle them. Airlines have trained this way since 1990. Crop Jet applies the same idea to agricultural aviation — where the airplane, the environment and the risks are very different, and where most operations have been doing something like it informally for years without a name, a syllabus or a way to measure it.</p>
+    <p class="pull">Agricultural aviation isn't an airline operation — and it shouldn't be trained like one.</p>
+    <div class="stats" aria-label="Key numbers">
+      <div><b>4–5</b><span>avoidable runway overruns seen in the 2024 season alone</span></div>
+      <div><b>&lt;500 hrs</b><span>ag time on the pilot in the NorCal turbine Ag-Cat fatality that started this program</span></div>
+      <div><b>3–4 sec</b><span>from dump handle to the airplane breaking ground — 325 to 450 feet at 80 mph</span></div>
+      <div><b>1 day</b><span>to put three pilots through the full dump syllabus: brief, fly, debrief</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="wrap">
+    <p class="eyebrow on-light">How it works</p>
+    <h2>Brief the threat. Fly it with a real load. Debrief it as a group.</h2>
+    <p class="lede">The first module is the one nobody else was teaching: when and how to dump the load on a takeoff that is going wrong. Ag airplanes are the only aircraft that can shed half their weight in seconds on command. Almost no one trains it.</p>
+    <p class="sub">The accident that prompted it: a turbine Ag-Cat, heavy with foliar fertilizer, rolled downwind, never got flying and hit trailers at the end of the runway. No dump was attempted. Every heavy takeoff has three places to make that decision.</p>
+
+    <div class="runway" role="img" aria-label="Runway diagram showing three decision points during a heavy takeoff: brief before the roll, tail-up check partway down, and a final emergency dump before the runway end.">
+      <svg viewBox="0 0 1000 230" xmlns="http://www.w3.org/2000/svg">
+        <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#12161c"/></marker></defs>
+        <rect x="40" y="120" width="880" height="54" fill="#eceae3" stroke="#dcd7cc"/>
+        <line x1="60" y1="147" x2="900" y2="147" stroke="#b8b1a3" stroke-width="3" stroke-dasharray="26 22"/>
+        <g fill="#b8b1a3"><rect x="52" y="126" width="6" height="42"/><rect x="64" y="126" width="6" height="42"/><rect x="76" y="126" width="6" height="42"/><rect x="878" y="126" width="6" height="42"/><rect x="890" y="126" width="6" height="42"/><rect x="902" y="126" width="6" height="42"/></g>
+        <rect x="940" y="112" width="40" height="62" fill="#b4531f"/>
+        <text x="960" y="150" font-family="Archivo,sans-serif" font-weight="700" font-size="11" fill="#fff" text-anchor="middle" transform="rotate(-90 960 150)">OBSTACLES</text>
+        <path d="M110 118 C 400 118, 560 110, 700 88 S 860 40, 930 20" fill="none" stroke="#12161c" stroke-width="2.5" marker-end="url(#arr)"/>
+        <g font-family="Archivo,sans-serif" font-weight="700" font-size="12" fill="#12161c" letter-spacing="1">
+          <line x1="120" y1="118" x2="120" y2="196" stroke="#dfb547" stroke-width="3"/><circle cx="120" cy="118" r="9" fill="#dfb547" stroke="#12161c" stroke-width="2"/><text x="120" y="216" text-anchor="middle">1 · BRIEF BEFORE ROLL</text>
+          <line x1="470" y1="112" x2="470" y2="196" stroke="#dfb547" stroke-width="3"/><circle cx="470" cy="112" r="9" fill="#dfb547" stroke="#12161c" stroke-width="2"/><text x="470" y="216" text-anchor="middle">2 · TAIL-UP CHECK</text>
+          <line x1="760" y1="78" x2="760" y2="196" stroke="#dfb547" stroke-width="3"/><circle cx="760" cy="78" r="9" fill="#dfb547" stroke="#12161c" stroke-width="2"/><text x="760" y="216" text-anchor="middle">3 · FINAL DUMP</text>
+        </g>
+        <g stroke="#7b838c" stroke-width="1.5"><line x1="760" y1="58" x2="860" y2="58"/><line x1="760" y1="52" x2="760" y2="64"/><line x1="860" y1="52" x2="860" y2="64"/></g>
+        <text x="810" y="46" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#7b838c">300–500 ft</text>
+        <text x="40" y="100" font-family="Archivo,sans-serif" font-weight="700" font-size="15" fill="#7b838c" letter-spacing="1">HEAVY · HOT · DOWNWIND</text>
+      </svg>
+      <div class="numbers" aria-label="Dump figures">
+        <div><b>50–60 gal/s</b><span>Manual gate dump rate</span></div>
+        <div><b>100 gal/s</b><span>Hydraulic door dump rate</span></div>
+        <div><b>115 ft/s</b><span>Ground covered per second at 80 mph</span></div>
+        <div><b>325–450 ft</b><span>Unload to ground-break, about 3–4 seconds</span></div>
+      </div>
+      <p class="caveat">These figures are from the published dump-training article and are for briefing, not planning. Your airplane's flight manual, your gate or door, your load and your density altitude govern. Dump training is flown with water, at a strip with room, with an instructor who has done it. George recommends 200+ hours in the aircraft before a pilot goes through the syllabus.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card"><p class="n">Before the roll</p><h3>Say the plan out loud</h3><p>Density altitude, how close you are to gross, where the tail should come up, and the point on the runway where you dump if it hasn't. Decide it while you're stopped, not while it's happening.</p></article>
+      <article class="card"><p class="n">Syllabus scenario 3</p><h3>Tail not up by your mark? Dump.</h3><p>The tail-up point is the earliest honest signal the airplane isn't going to make it. Pilots practice recognizing it with a real water load so the reaction is a reflex, not a debate.</p></article>
+      <article class="card"><p class="n">Syllabus scenario 6</p><h3>The last-chance dump</h3><p>Airborne or nearly so, obstacles coming, 300–500 feet left. Pull the handle. The airplane pitches up hard as the weight leaves; it takes forward stick to keep it from stalling.</p></article>
+      <article class="card"><p class="n">Engine-out with a load</p><h3>Lighter is better</h3><p>Classroom analysis of real accident reports where the load stayed on too long. Dump early and decisively: better glide, more control authority.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="day">
+  <div class="wrap">
+    <p class="eyebrow on-light">A training day, as flown</p>
+    <h2>Three pilots. One day. No simulator required.</h2>
+    <p class="lede">Classroom first, working through real accident reports where the load-jettison decision was made late or not at all. Then each pilot flies the scenarios with a water load at several phases of flight. Then everybody sits down together.</p>
+    <div class="grid">
+      <article class="card"><p class="n">30 min</p><h3>Brief</h3><p>The accident, the numbers, the three decision points, what the airplane will do when the load leaves.</p></article>
+      <article class="card"><p class="n">1.5 hr</p><h3>Fly — pilot 1</h3><p>Water load. Tail-up recognition, dump at the mark, the pitch-up and the forward stick. Repeated until it's clean.</p></article>
+      <article class="card"><p class="n">1.5 hr each</p><h3>Fly — pilots 2 &amp; 3</h3><p>Same syllabus, each pilot in the seat. The others watch from the ground and see what the airplane does.</p></article>
+      <article class="card"><p class="n">1.5 hr</p><h3>Group debrief</h3><p>What each pilot saw, where the decision was late, what changes tomorrow morning. This is where the learning sticks.</p></article>
+    </div>
+    <p class="pull">“Complacency kills. Regular refreshers keep reflexes sharp and procedures current.”<small>Gibson Oster, Lakeland Dusters, after attending — AgAir Update, June 2026</small></p>
+    <div class="photo" aria-hidden="true">Photo slot — real aircraft, water load, on the strip</div>
+  </div>
+</section>
+
+<section class="section" id="origin">
+  <div class="wrap">
+    <p class="eyebrow on-light">Where it came from</p>
+    <h2>Borrowed from the airlines. Built for the strip.</h2>
+    <p class="lede">George's son flies a 737 for Delta. Conversations about how airline crews train, and a push from Dan Gryder's general-aviation AQP work, turned into a question: why doesn't ag have this?</p>
+    <ol class="tl">
+      <li><b>1990</b><p>The FAA creates AQP as a special rule (SFAR 58): a voluntary, data-driven alternative to the fixed maneuver list, built around scenarios that look like real line operations.</p></li>
+      <li><b>2005</b><p>AQP is written into the regulations as 14 CFR Part 121 Subpart Y. Guidance lives in Advisory Circular 120-54A. Most major airlines train under it today.</p></li>
+      <li><b>2014</b><p>The NTSB's special report on ag operations (SIR-14/01) studies 78 ag accidents from 2013, nine of them fatal. It finds training that varies widely between providers, no duty-time limits under Part 137, fatigue in five of the accidents, and risk-management gaps around obstacles, density altitude and stalls.</p></li>
+      <li><b>2024</b><p>A rookie ag pilot dies in a turbine Ag-Cat overrun in Northern California. No dump was attempted. George writes the first AQP for Ag dump syllabus and flies three pilots through it in a day.</p></li>
+      <li><b>2025</b><p>AgAir Update publishes the dump-training article in January. The AQP for Ag group opens on Facebook on June 2 as the working home for the program.</p></li>
+      <li><b>2026</b><p>Operators start attending. Gibson Oster of Lakeland Dusters writes up the program for AgAir Update: classroom accident analysis plus water-load scenarios at multiple phases of flight.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="george">
+  <div class="wrap">
+    <p class="eyebrow on-light">Who's behind it</p>
+    <h2>George Parker III</h2>
+    <div class="bio">
+      <div>
+        <p class="lede">Third-generation pilot, second-generation ag pilot. Owner-operator of Crop Jet Aviation in Gooding, Idaho. He sees the human and financial cost of a wreck up close, and he built this so fewer operators have to.</p>
+        <p>Soloed at 16, had private, seaplane and instrument by 17, commercial and multi by 18, helicopter later. Started ag flying in 1997 at 23 and has done nothing else since 1998. Before setting up Crop Jet in Idaho in 2005 he filled 19 different seats in ag aviation across 14 states, working 20-plus crops in 16 models of ag aircraft. Since then Crop Jet has treated more than 750,000 acres of farm ground and 500,000 acres of government work: grasshopper control for USDA-APHIS, fire-rehab seeding, herbicide.</p>
+        <p>He is a past president of the Idaho Agricultural Aviation Association, Idaho's board member to the NAAA, and was instrumental in Idaho's MET tower marking law (HB511, 2013). He also founded and runs the “Rookie, I want to be an Ag Pilot” Facebook group, where he posts his own trainees' progression flights, radio calls and debriefs for more than 19,000 members.</p>
+      </div>
+      <ul class="facts">
+        <li><span>Operation</span><span>Crop Jet Aviation, LLC — Gooding, Idaho. Strips at Hazelton, Jerome, Gooding, Buhl, Bell Rapids, Glenns Ferry, Fairfield, Twin Falls and Hansen.</span></li>
+        <li><span>Total time</span><span>21,000+ hours, 15,000+ in agricultural operations</span></li>
+        <li><span>Ag career</span><span>Began 1997 · ag exclusively since 1998</span></li>
+        <li><span>Applicator</span><span>Licensed in Idaho, Washington, Oregon, Utah and Wyoming</span></li>
+        <li><span>Industry</span><span>Past president, Idaho AAA · NAAA board member for Idaho</span></li>
+        <li><span>Mentoring</span><span>Founder, “Rookie, I want to be an Ag Pilot” group (19,000+ members)</span></li>
+        <li><span>Program</span><span>Admin, “AQP for Ag” public group (since June 2025)</span></li>
+      </ul>
+    </div>
+    <div class="plain" id="honest">
+      <h3>Read this first</h3>
+      <p>AQP for Ag Pilots is an industry safety effort. It is <strong>not an FAA-approved program under 14 CFR Part 121 Subpart Y</strong>, and it does not replace the training, checks or currency required under Parts 61 and 137, or your state applicator license.</p>
+      <p>Techniques described here are techniques that can be used. <strong>The approved flight manual for the aircraft you're flying, your operator's procedures and a qualified instructor govern.</strong> Dump training is conducted with water, with adequate runway, by pilots experienced in the aircraft.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <p class="eyebrow">Request info</p>
+        <h2>The program is being built in the open. Come build it.</h2>
+        <p class="lede">The AQP for Ag group is a public page dedicated to the inception of an Advanced Qualification Program for Part 137 operations — the syllabus, the accident breakdowns, the scenarios as they get flown. Pilots, operators, instructors and the people who keep the airplanes flying are all welcome.</p>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="https://www.facebook.com/groups/1018878290449074/" rel="noopener">Join AQP for Ag on Facebook</a>
+          <a class="btn btn-ghost" href="https://cropjet.com/" rel="noopener">Crop Jet Aviation</a>
+        </div>
+      </div>
+      <div style="display:grid;gap:14px">
+        <div class="box"><h3>Operators</h3><p>Want your pilots through the dump syllabus before the season? Reach George through the group or Crop Jet Aviation. A full day handles three pilots.</p></div>
+        <div class="box"><h3>Pilots</h3><p>Read the dump-training article, then read it again before your first heavy load of the year. Brief the three decision points out loud on every takeoff.</p></div>
+        <div class="box"><h3>Instructors and safety people</h3><p>The syllabus, the scenarios and the numbers are published. If you have data, accident experience or a scenario worth adding, post it.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h4>Sources — everything on this page traces to one of these</h4>
+    <ul>
+      <li>George Parker III, <a href="https://agairupdate.com/2025/01/01/saving-lives-through-dump-training-lessons-from-a-recent-norcal-fatality/" rel="noopener">“Saving Lives Through Dump Training,”</a> AgAir Update, Jan. 1, 2025</li>
+      <li>Gibson Oster, <a href="https://agairupdate.com/2026/06/01/beyond-experience-the-aqp/" rel="noopener">“Beyond Experience: The AQP,”</a> AgAir Update, June 1, 2026</li>
+      <li><a href="https://agairupdate.com/2025/07/01/reginas-perspective-mentors-part-1-george-parker-iii/" rel="noopener">“Regina's Perspective – Mentors Part 1 – George Parker III,”</a> AgAir Update, July 1, 2025</li>
+      <li><a href="https://cropjet.com/crew/" rel="noopener">Crop Jet Aviation — Crew</a> · <a href="https://cropjet.com/about-us/" rel="noopener">About Us</a></li>
+      <li>FAA, <a href="https://www.faa.gov/training_testing/training/aqp" rel="noopener">Advanced Qualification Program</a> (14 CFR 121 Subpart Y; AC 120-54A)</li>
+      <li>NTSB, <a href="https://www.ntsb.gov/safety/safety-studies/Documents/SIR1401.pdf" rel="noopener">SIR-14/01, Safety of Agricultural Aircraft Operations</a> (2014)</li>
+      <li><a href="https://www.facebook.com/groups/1018878290449074/" rel="noopener">AQP for Ag</a> public Facebook group (created June 2, 2025)</li>
+      <li>NAAA, <a href="https://www.agaviation.org/education/accidents/" rel="noopener">Ag Aviation Accidents</a> dashboards</li>
+    </ul>
+    <p class="legal">© 2026 Crop Jet Ag Pilot AQP · aqpforagpilots.com · Sources cited by document and date.</p>
+  </div>
+</footer>
+</body>
+</html>
